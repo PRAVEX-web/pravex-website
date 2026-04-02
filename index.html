@@ -104,7 +104,7 @@
   <section class="why-section">
     <h2 class="why-title">Why Pravex</h2>
     <p class="why-sub">
-      We help small businesses look professional, build trust, <br>and grow faster.
+      We create impactful branding that helps your business <br>attract customers, earn trust, and grow consistently.
     </p>
 
     <div class="why-cards ">
@@ -148,7 +148,23 @@
         <div class="work-slide"><img src="ALL_IMGs/Our Works/Social Media/10.jpg"></div>
         <div class="work-slide"><img src="ALL_IMGs/Our Works/Social Media/2.jpg"></div>
         <div class="work-slide"><img src="ALL_IMGs/Our Works/Social Media/Green Chilly Offer.jpg"></div>
-        <div class="work-slide"><img src="ALL_IMGs/Our Works/Logos/Sulkar.jpg"></div>
+        <div class="work-slide"><img src="ALL_IMGs/Our Works/Logos/Orgorise.jpg"></div>
+        <div class="work-slide"><img src="ALL_IMGs/Our Works/Logos/FBF.jpg"></div>
+        <div class="work-slide"><img src="ALL_IMGs/Our Works/Brochure & Flyer/B8.jpg"></div>
+        <div class="work-slide"><img src="ALL_IMGs/Our Works/Brochure & Flyer/f10.jpg"></div>
+        <div class="work-slide"><img src="ALL_IMGs/Our Works/Brochure & Flyer/B7.jpg"></div>
+        <div class="work-slide"><img src="ALL_IMGs/Our Works/Brochure & Flyer/F5.jpg"></div>
+        <div class="work-slide"><img src="ALL_IMGs/Our Works/Banners & Standee/B2.jpg"></div>
+        <div class="work-slide"><img src="ALL_IMGs/Our Works/Banners & Standee/S1.jpg"></div>
+        <div class="work-slide"><img src="ALL_IMGs/Our Works/Banners & Standee/S4.jpg"></div>
+        <div class="work-slide"><img src="ALL_IMGs/Our Works/Banners & Standee/B3.jpg"></div>
+
+        <!-- Duplies -->
+        <div class="work-slide"><img src="ALL_IMGs/Our Works/Social Media/1.jpg"></div>
+        <div class="work-slide"><img src="ALL_IMGs/Our Works/Social Media/10.jpg"></div>
+        <div class="work-slide"><img src="ALL_IMGs/Our Works/Social Media/2.jpg"></div>
+        <div class="work-slide"><img src="ALL_IMGs/Our Works/Social Media/Green Chilly Offer.jpg"></div>
+        <div class="work-slide"><img src="ALL_IMGs/Our Works/Logos/Orgorise.jpg"></div>
         <div class="work-slide"><img src="ALL_IMGs/Our Works/Logos/FBF.jpg"></div>
         <div class="work-slide"><img src="ALL_IMGs/Our Works/Brochure & Flyer/B8.jpg"></div>
         <div class="work-slide"><img src="ALL_IMGs/Our Works/Brochure & Flyer/f10.jpg"></div>
@@ -159,22 +175,6 @@
         <div class="work-slide"><img src="ALL_IMGs/Our Works/Banners & Standee/S4.jpg"></div>
         <div class="work-slide"><img src="ALL_IMGs/Our Works/Banners & Standee/B3.jpg"></div>
       </div>
-    </div>
-
-    <div class="work-dots">
-      <span class="dot active"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
     </div>
 
   </section>
@@ -271,51 +271,6 @@ function revealOnScroll() {
 }
 
 window.addEventListener("scroll", revealOnScroll);
-
-/* Slider */
-let index = 0;
-
-const slides = document.querySelectorAll(".work-slide");
-const dots = document.querySelectorAll(".dot");
-const track = document.querySelector(".work-track");
-let interval;
-
-/* SHOW SLIDE */
-function showSlide(i) {
-  index = i;
-  track.style.transform = `translateX(-${i * 50}%)`;
-
-  dots.forEach(dot => dot.classList.remove("active"));
-  dots[i].classList.add("active");
-}
-
-/* AUTO SLIDE */
-function startAutoSlide() {
-  interval = setInterval(() => {
-    index++;
-    if (index >= slides.length) index = 0;
-    showSlide(index);
-  }, 2500);
-}
-
-/* STOP ON HOVER */
-document.querySelector(".work-slider").addEventListener("mouseenter", () => {
-  clearInterval(interval);
-});
-
-document.querySelector(".work-slider").addEventListener("mouseleave", () => {
-  startAutoSlide();
-});
-
-/* DOT CLICK */
-dots.forEach((dot, i) => {
-  dot.addEventListener("click", () => {
-    showSlide(i);
-  });
-});
-
-/* INIT */
-startAutoSlide();
 
 /* NAVLINKS */
 const sections = document.querySelectorAll("section");
