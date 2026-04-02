@@ -19,16 +19,16 @@
   <!-- NAVBAR -->
   <div class="navbar">
     <div class="nav-links">
-      <a href="#">HOME</a>
-      <a href="#">SERVICES</a>
-      <a href="#">OUR WORK</a>
-      <a href="#">PACKAGES</a>
-      <a href="#">CONTACT</a>
+      <a href="#home">HOME</a>
+      <a href="#services">SERVICES</a>
+      <a href="#work">OUR WORK</a>
+      <a href="#packages">PACKAGES</a>
+      <a href="#contact">CONTACT</a>
     </div>
   </div>
 
   <!-- HERO -->
-  <section class="hero">
+  <section id="home" class="hero">
     <div class="hero-left">
       <h1 class="hero-title">Pravex</h1>
       <!-- <p class="hero-p">
@@ -48,7 +48,7 @@
   </section>
 
   <!-- SERVICES INSIDE SAME WRAPPER -->
-  <section class="services-section">
+  <section id="services" class="services-section">
 
     <div class="services-container">
 
@@ -138,47 +138,49 @@
   </section>
 
   <!-- Work Section -->
-   <section class="work-section">
+  <section id="work" class="work-section">
+    <h2 class="work-title">Our Work</h2>
+    <p class="work-sub">A glimpse of what we've created for businesses like yours.</p>
 
-  <h2 class="work-title">Our Work</h2>
-  <p class="work-sub">A glimpse of what we've created for businesses like yours.</p>
-
-  <div class="work-slider">
-    <div class="work-track">
-
-      <img src="ALL_IMGs/Our Works/Social Media/1.jpg">
-      <img src="ALL_IMGs/Our Works/Social Media/10.jpg">
-      <img src="ALL_IMGs/Our Works/Social Media/2.jpg">
-      <img src="ALL_IMGs/Our Works/Social Media/9.jpg">
-      <img src="ALL_IMGs/Our Works/Social Media/Green Chilly Offer.jpg">
-      <img src="ALL_IMGs/Our Works/Logos/Sulkar.jpg">
-      <img src="ALL_IMGs/Our Works/Logos/FBF.jpg">
-      <img src="ALL_IMGs/Our Works/Logos/Orgorise.jpg">
-      <img src="ALL_IMGs/Our Works/Brochure & Flyer/B8.jpg">
-      <img src="ALL_IMGs/Our Works/Brochure & Flyer/f10.jpg">
-      <img src="ALL_IMGs/Our Works/Banners & Standee/S5.jpg">
-      <img src="ALL_IMGs/Our Works/Banners & Standee/S1.jpg">
-
-      <!-- DUPLICATES -->
-      <img src="ALL_IMGs/Our Works/Social Media/1.jpg">
-      <img src="ALL_IMGs/Our Works/Social Media/10.jpg">
-      <img src="ALL_IMGs/Our Works/Social Media/2.jpg">
-      <img src="ALL_IMGs/Our Works/Social Media/9.jpg">
-      <img src="ALL_IMGs/Our Works/Social Media/Green Chilly Offer.jpg">
-      <img src="ALL_IMGs/Our Works/Logos/Sulkar.jpg">
-      <img src="ALL_IMGs/Our Works/Logos/FBF.jpg">
-      <img src="ALL_IMGs/Our Works/Logos/Orgorise.jpg">
-      <img src="ALL_IMGs/Our Works/Brochure & Flyer/B8.jpg">
-      <img src="ALL_IMGs/Our Works/Brochure & Flyer/f10.jpg">
-      <img src="ALL_IMGs/Our Works/Banners & Standee/S5.jpg">
-      <img src="ALL_IMGs/Our Works/Banners & Standee/S1.jpg">
+    <div class="work-slider">
+      <div class="work-track">
+        <div class="work-slide"><img src="ALL_IMGs/Our Works/Social Media/1.jpg"></div>
+        <div class="work-slide"><img src="ALL_IMGs/Our Works/Social Media/10.jpg"></div>
+        <div class="work-slide"><img src="ALL_IMGs/Our Works/Social Media/2.jpg"></div>
+        <div class="work-slide"><img src="ALL_IMGs/Our Works/Social Media/Green Chilly Offer.jpg"></div>
+        <div class="work-slide"><img src="ALL_IMGs/Our Works/Logos/Sulkar.jpg"></div>
+        <div class="work-slide"><img src="ALL_IMGs/Our Works/Logos/FBF.jpg"></div>
+        <div class="work-slide"><img src="ALL_IMGs/Our Works/Brochure & Flyer/B8.jpg"></div>
+        <div class="work-slide"><img src="ALL_IMGs/Our Works/Brochure & Flyer/f10.jpg"></div>
+        <div class="work-slide"><img src="ALL_IMGs/Our Works/Brochure & Flyer/B7.jpg"></div>
+        <div class="work-slide"><img src="ALL_IMGs/Our Works/Brochure & Flyer/F5.jpg"></div>
+        <div class="work-slide"><img src="ALL_IMGs/Our Works/Banners & Standee/B2.jpg"></div>
+        <div class="work-slide"><img src="ALL_IMGs/Our Works/Banners & Standee/S1.jpg"></div>
+        <div class="work-slide"><img src="ALL_IMGs/Our Works/Banners & Standee/S4.jpg"></div>
+        <div class="work-slide"><img src="ALL_IMGs/Our Works/Banners & Standee/B3.jpg"></div>
+      </div>
     </div>
-  </div>
 
-</section>
+    <div class="work-dots">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+
+  </section>
 
   <!-- Packages section -->
-  <section class="packages">
+  <section id="packages" class="packages">
   <h2 class="packages-title">
     Choose the right<br>plan for your business
   </h2>
@@ -194,7 +196,7 @@
   </div>
   </section>
   <!-- Yellow_CTA_STRIP  -->
-   <section class="contact-strip">
+   <section id="contact" class="contact-strip">
     <div class="contact-container">
 
       <!-- LEFT TEXT -->
@@ -205,7 +207,9 @@
 
       <!-- RIGHT IMAGE -->
       <div class="contact-image">
-        <img src="ALL_IMGs/Contact No.png" alt="Contact Number">
+        <a href="https://wa.me/917977766242?text=Hi!%20I%20want%20to%20know%20more%20about%20your%20services" target="_blank">
+          <img src="ALL_IMGs/Contact No.png" alt="Contact Number">
+        </a>
       </div>
 
     </div>
@@ -267,6 +271,80 @@ function revealOnScroll() {
 }
 
 window.addEventListener("scroll", revealOnScroll);
+
+/* Slider */
+let index = 0;
+
+const slides = document.querySelectorAll(".work-slide");
+const dots = document.querySelectorAll(".dot");
+const track = document.querySelector(".work-track");
+let interval;
+
+/* SHOW SLIDE */
+function showSlide(i) {
+  index = i;
+  track.style.transform = `translateX(-${i * 50}%)`;
+
+  dots.forEach(dot => dot.classList.remove("active"));
+  dots[i].classList.add("active");
+}
+
+/* AUTO SLIDE */
+function startAutoSlide() {
+  interval = setInterval(() => {
+    index++;
+    if (index >= slides.length) index = 0;
+    showSlide(index);
+  }, 2500);
+}
+
+/* STOP ON HOVER */
+document.querySelector(".work-slider").addEventListener("mouseenter", () => {
+  clearInterval(interval);
+});
+
+document.querySelector(".work-slider").addEventListener("mouseleave", () => {
+  startAutoSlide();
+});
+
+/* DOT CLICK */
+dots.forEach((dot, i) => {
+  dot.addEventListener("click", () => {
+    showSlide(i);
+  });
+});
+
+/* INIT */
+startAutoSlide();
+
+/* NAVLINKS */
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-links a");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 150;
+
+    if (pageYOffset >= sectionTop) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  // 🔥 FIX: detect bottom of page (for last section)
+  if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 10) {
+    current = sections[sections.length - 1].getAttribute("id");
+  }
+
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+
+    if (link.getAttribute("href") === "#" + current) {
+      link.classList.add("active");
+    }
+  });
+});
 </script>
 </body>
 </html>

@@ -1,4 +1,8 @@
 /* RESET */
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -15,6 +19,10 @@ body {
   src: url('./fonts/berthusen/Berthusen Demo.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
+}
+
+section {
+  scroll-margin-top: 80px; /* adjust based on navbar height */
 }
 
 /* HERO WRAPPER */
@@ -73,9 +81,12 @@ body {
   opacity: 0.6;
   color: #ffcc00;
 }
-
 .nav-links a:hover {
   color: #ffffff;
+}
+.nav-links a.active {
+  color: #ffffff;
+  font-weight: 600;
 }
 
 /* .......HERO....... */
@@ -326,7 +337,7 @@ body {
   border-radius: 14px;
   text-align: left;
 
-  transition: transform 0.2s ease, box-shadow 0.2s ease; 
+  transition: transform 0.05s ease, box-shadow 0.2s ease; 
 }
 /* HOVER EFFECT (premium feel) */
 .why-card.reveal.active:hover {
@@ -375,7 +386,7 @@ body {
 /* .......Our Works....... */
 .work-section {
   background: #111;
-  padding: 70px 0;
+  padding: 40px 0;
 }
 
 .work-title {
@@ -396,34 +407,55 @@ body {
 /* SLIDER */
 .work-slider {
   overflow: hidden;
+  max-width: 900px;
+  margin: auto;
 }
 
 .work-track {
   display: flex;
-  gap: 20px;
-  width: max-content;
-
-  animation: scroll 30s linear infinite;
-}
-.work-track:hover {
-  animation-play-state: paused;
+  transition: transform 0.4s ease;
 }
 
-/* IMAGES */
-.work-track img {
-  height: 180px;
+/* EACH SLIDE */
+.work-slide {
+  min-width: 50%; /* 3 images visible */
+  display: flex;
+  justify-content: center;
+}
+
+/* IMAGE */
+.work-slide img {
+  width: 100%;
+  max-width: 500px;
+  height: 280px;
+
+  object-fit: contain; /* ✅ shows full image */
+
   border-radius: 12px;
-  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.work-slide img:hover {
+  transform: scale(1.05);
 }
 
-/* ANIMATION */
-@keyframes scroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-20%);
-  }
+/* DOTS */
+.work-dots {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  margin: 5px;
+  background: #555;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #ffcc00;
 }
 
 /* .......PACKAGES START....... */
@@ -470,20 +502,22 @@ body {
 
 .packages-note {
   max-width: 1200px;
-  margin: 8px auto 0;
-  padding-left: 55px; /* same as title alignment */
+  margin: 5px auto 0;   /* 👈 bring closer */
+  padding-left: 55px;
+
+  opacity: 0.6;         /* 👈 less attention */
 }
 
 .packages-note p {
   color: #ffcc00;
-  font-size: 16px;
-  margin: 4px 0;
+  font-size: 12px;
+  margin: 2px 0;
   line-height: 0.7;
   letter-spacing: 0.3px;
 }
 .packages-note p::before {
   content: "• ";
-  font-size: 22px;
+  font-size: 12px;
 }
 
 /* YELLOW_CTA_STRIP */
@@ -525,8 +559,14 @@ body {
   max-width: 450px; /* slightly tighter */
   height: auto;
   display: block;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.contact-image img:hover {
+  transform: scale(1.05);
 }
 
+/* .......Footer....... */
 .footer {
   background: linear-gradient(to right, #000000, #1a1a1a);
   padding: 60px 20px 20px;
