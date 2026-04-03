@@ -198,6 +198,7 @@ section {
 }
 
 .services-left h2 {
+  text-align: center;
   font-size: 36px;
   color: #111;
   font-weight: 700;
@@ -235,7 +236,7 @@ section {
 /* .......Black-CTA....... */
 .cta-strip {
   background: url("ALL_IMGs/2nd Patch.png") no-repeat center/cover;
-  padding: 40px 0;
+  padding: 25px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -305,19 +306,19 @@ section {
 }
 
 .why-title {
+  text-align: center;
   max-width: 1200px;
   font-size: 36px;
   margin: 0 auto 5px;
-  padding-left: 55px; /* same as packages */
 }
 
 .why-sub {
+  text-align: center;
   font-size: 20px;
   max-width: 1200px;
   line-height: 1.3;
 
   margin: 0 auto 35px;   /* 👈 center container */
-  padding-left: 55px;    /* 👈 align text */
   opacity: 0.8;
 }
 /* GRID LOOK (cleaner than flex) */
@@ -385,24 +386,24 @@ section {
 
 /* .......Our Works....... */
 .work-section {
-  background: #111;
+  background: radial-gradient(circle at center, #292929, #000);
   padding: 40px 0;
 }
 
 .work-title {
+  text-align: center;
   color: #ffcc00;
   font-size: 36px;
   max-width: 1200px;
   margin: 0 auto 2px;
-  padding-left: 55px;
 }
 
 .work-sub {
+  text-align: center;
   color: #ffcc00;
   font-size: 20px;
   max-width: 1200px;
   margin: 0 auto 40px;
-  padding-left: 55px;
 }
 
 /* SLIDER */
@@ -430,7 +431,7 @@ section {
 
 /* IMAGE */
 .work-slide img {
-  height: 400px;
+  height: 370px;
   width: auto;
   object-fit: contain;
   border-radius: 12px;
@@ -455,13 +456,13 @@ section {
 
 /* .......PACKAGES START....... */
 .packages {
-  margin-top: 30px;
-  background: radial-gradient(circle at bottom right, #292929, #000);
-  padding: 30px 0; /* 👈 pushes section slightly down */
+  background: radial-gradient(circle at center, #292929, #000);
+  padding: 30px 0 40px; /* 👈 pushes section slightly down */
   text-align: left;
 }
 
 .packages-title {
+  text-align: center;
   color: #ffcc00;
   font-size: 36px;
   font-weight: 700;
@@ -615,6 +616,7 @@ section {
 /* yellow bullet */
 .footer-links li::before {
   content: "◆";
+  font-size: 15px;
   color: #ffcc00;
   position: absolute;
   left: 0;
@@ -673,6 +675,16 @@ section {
 .footer-bottom p {
   font-size: 12px;
   color: #ffcc00;
+}
+
+/* REMOVE LEFT PUSH */
+.why-title,
+.why-sub,
+.work-title,
+.work-sub,
+.packages-title,
+.packages-note {
+  padding-left: 0 !important;
 }
 
 /* For Mobile */
