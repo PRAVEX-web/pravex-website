@@ -167,7 +167,7 @@ section {
   display: flex;
   justify-content: flex-start;
   position: relative;
-  left: 42px;
+  left: 32px;
   top: 32px; /* 👈 pushes image DOWN into black strip */
   z-index: 3;
   transform: rotate(-0.5deg);
@@ -235,7 +235,7 @@ section {
 
 /* .......Black-CTA....... */
 .cta-strip {
-  background: url("ALL_IMGs/2nd Patch.png") no-repeat center/cover;
+  background: url("/ALL_IMGs/2nd Patch.png") no-repeat center/cover;
   padding: 25px 0;
   display: flex;
   justify-content: space-between;
