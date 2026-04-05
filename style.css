@@ -718,6 +718,7 @@ textarea::placeholder {
 
 /* For Mobile */
 @media (max-width: 768px) {
+
   * {
     box-sizing: border-box;
   }
@@ -726,88 +727,91 @@ textarea::placeholder {
     overflow-x: hidden;
   }
 
+  /* 🔥 NAVBAR FIX */
   .navbar {
-    padding: 10px 15px;
-  }
-  .nav-links a {
-    margin-left: 15px;
-    font-size: 12px;
+    padding: 8px 10px;
   }
 
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .nav-links a {
+    margin: 0;
+    font-size: 11px;
+  }
+
+  .nav-links a::after {
+    display: none;
+  }
+
+  /* HERO */
   .hero,
   .hero-wrapper {
     width: 100%;
   }
 
-  /* HERO WRAPPER */
   .hero-wrapper {
     position: relative;
   }
+
   .hero-wrapper::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 380px;
-
+    height: 350px;
     background: #111;
-
-    clip-path: polygon(0 0, 100% 0, 100%, 0 100%);
     z-index: 1;
-  }
-
-  .hero-bg {
-    display: none;
   }
 
   .hero {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-top: 20px;
     padding: 40px 20px;
     text-align: center;
   }
-  .hero img {
-    margin-top: 20px;
-  }
-  .hero-title,
-  .hero-p,
-  .hero-btn {
-    position: relative;
-    z-index: 2;
+
+  /* 🔥 REMOVE LAPTOP */
+  .hero-right {
+    display: none;
   }
 
+  /* 🔥 CENTER LOGO */
   .hero-left {
-    margin-left: 0;
     max-width: 100%;
+    text-align: center;
   }
 
-  .hero-title {
-    font-size: 70px; /* 🔥 reduced */
-    margin-left: 0;
+  .hero-logo {
+    width: 280px;
+    margin: 0 auto;
+    display: block;
   }
 
+  /* 🔥 CENTER TEXT */
   .hero-left p {
-    margin: 10px 0;
-    font-size: 16px;
+    margin: 15px auto;
+    font-size: 15px;
+    max-width: 280px;
+    text-align: center;
   }
 
+  /* 🔥 CENTER BUTTON */
   .hero-btn {
-    margin: 10px auto;
-    display: inline-block;
+    display: block;
+    margin: 15px auto;
+    text-align: center;
   }
-  
- .hero-btn {
-  display: block;
-  margin: 15px auto;
-  text-align: center;
- }
 
   /* SERVICES */
   .services-section {
-    padding: 50px;
+    padding: 40px 20px;
   }
 
   .services-section::before {
@@ -817,22 +821,15 @@ textarea::placeholder {
     height: 180px;
     background: url("ALL_IMGs/Pravex CEO 2.png") no-repeat center;
     background-size: contain;
-    margin-top: -30px;
+    margin-top: -20px;
   }
 
   .services-container {
     flex-direction: column;
-    align-items: center;
     text-align: center;
   }
 
-  .services-right {
-    justify-content: center;
-    top: 0;
-  }
-
   .services-right img {
-    height: 160px;
     display: none;
   }
 
@@ -841,95 +838,94 @@ textarea::placeholder {
     gap: 20px;
   }
 
-  .services-left {
-    margin-top: 0;
-  }
-
   .services-middle {
     margin: 0;
     text-align: left;
   }
 
-  /* 1st CTA Strip */
+  /* CTA STRIP */
   .cta-strip {
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .cta-strip .container {
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    padding: 40px 20px;
   }
 
   .cta-left,
   .cta-right {
-    padding: 0;
     width: 100%;
-  }
-
-  .cta-left {
-    margin-bottom: 10px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    text-align: center;
   }
 
   .cta-left p {
-    width: 100%;
-    max-width: 300px;   /* slightly tighter = better wrapping */
+    max-width: 280px;
     margin: 0 auto;
-    text-align: center;
     line-height: 1.6;
-    font-style: normal;
-    word-break: keep-all;
-    overflow-wrap: normal;  /* 🔥 KEY FIX */
-  }
-  .cta-left h3 {
-    font-size: 18px;
-    margin-bottom: 15px;
   }
 
   .cta-right {
-    width: 100%;
     align-items: center;
-    text-align: center;
-    gap: 12px;
+    gap: 15px;
+    margin-top: 15px;
   }
 
   .cta-btn {
-    display: inline-block;   /* 🔥 IMPORTANT (not block) */
-    word-break: keep-all;
-    width: auto;             /* remove forced width */
-    max-width: 260px;        /* control size */
-
-    margin: 20px auto 10px;
+    max-width: 260px;
     padding: 12px 18px;
-
-    font-size: 14px;
     border-radius: 30px;
-
-    text-align: center;
-    line-height: 1.4;
-
-    white-space: normal;     /* allow 2 lines only */
+    font-size: 14px;
   }
 
   .cta-contact {
-    display: flex;
-   flex-direction: column;
+    flex-direction: column;
     align-items: center;
-   gap: 8px;
+    gap: 8px;
   }
+
   .cta-contact span {
-    white-space: nowrap;
     font-size: 16px;
   }
 
   /* WHY SECTION */
-  
+  .why-cards {
+    grid-template-columns: 1fr;
+  }
 
   /* PACKAGES */
   .packages-container {
     flex-direction: column;
     align-items: center;
+    gap: 25px;
+  }
+
+  .packages-container img {
+    max-width: 260px;
+  }
+
+  /* 🔥 FIX TEXT OVERLAP */
+  .packages-note {
+    margin-top: 15px;
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  /* CONTACT STRIP */
+  .contact-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .contact-text {
+    padding-left: 0;
+  }
+
+  .contact-image img {
+    padding-right: 0;
+    max-width: 280px;
   }
 
   /* FOOTER */
@@ -939,15 +935,9 @@ textarea::placeholder {
     padding-left: 20px;
   }
 
-}
-@media (max-width: 900px) {
-  .why-cards {
-    grid-template-columns: repeat(2, 1fr);
+  .footer-logo img {
+    max-width: 200px;
+    margin: 0 auto;
   }
-}
 
-@media (max-width: 500px) {
-  .why-cards {
-    grid-template-columns: 1fr;
-  }
 }
