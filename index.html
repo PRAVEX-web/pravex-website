@@ -41,6 +41,12 @@
           class="hero-btn">Whatsapp Now</a>
         </div>
       </div>
+      <div class="laptop-screen">
+        <img class="slide active" src="ALL_IMGs/Cristina B4-B5.png">
+        <img class="slide" src="ALL_IMGs/Sakshi B2.png">
+        <img class="slide" src="ALL_IMGs/Sakshi B3.png">
+        <img class="slide" src="ALL_IMGs/Salexi B4.png">
+      </div>
     </div>
   </section>
 
@@ -238,16 +244,14 @@
       <!-- CONTACT -->
       <div class="footer-contact">
         <h4>Get in Touch</h4>
-        <p>Leave your contact details and my team will get in touch with you.</p>
-        <form action="https://formspree.io/f/mojpppnp" method="POST" onsubmit="showMessage()">
+        <p>Leave your contact details and <br>my team will get in touch with you.</p>
+        <form id="contactForm">
 
           <input type="text" name="name" placeholder="Name" required>
           <input type="tel" name="contact" placeholder="Contact" required>
-          <input type="text" name="work" placeholder="Type of Work" required>
           <textarea name="message" placeholder="Your message/Requirement" required></textarea>
-          <input type="hidden" name="_next" value="https://monkey-d-luffy2005.github.io/pravex-website/">
 
-          <button type="submit">SUBMIT</button>
+          <button class="btn" type="submit">SUBMIT</button>
           <p id="formMsg" style="color:#ffcc00; margin-top:10px; display:none;">
             Got it! We’ll reach out shortly.
           </p>
@@ -258,13 +262,27 @@
     <!-- BOTTOM LINE -->
     <div class="footer-bottom">
       <div class="line"></div>
-      <p>Copyright ©</p>
+      <p>Made with ❤️ © 2026 Pravex</p>
     </div>
   </footer>
 
 </div>
 <!-- JS -->
 <script>
+/* lappy scroll */
+const slides = document.querySelectorAll(".laptop-screen .slide");
+
+let current = 0;
+
+setInterval(() => {
+  slides[current].classList.remove("active");
+
+  current = (current + 1) % slides.length;
+
+  slides[current].classList.add("active");
+}, 2000);
+
+/* Why-card */
 const reveals = document.querySelectorAll(".reveal");
 
 function revealOnScroll() {
@@ -310,9 +328,32 @@ window.addEventListener("scroll", () => {
   });
 });
 /* Submit MSG */
-function showMessage() {
-  document.getElementById("formMsg").style.display = "block";
-}
+const form = document.getElementById("contactForm");
+
+form.addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const data = new FormData(form);
+
+  const response = await fetch("https://formspree.io/f/mojpppnp", {
+    method: "POST",
+    body: data,
+    headers: {
+      'Accept': 'application/json'
+    }
+  });
+
+  const msg = document.getElementById("formMsg");
+
+  if (response.ok) {
+    msg.style.display = "block";
+    msg.innerText = "Got it! We’ll reach out shortly.";
+    form.reset();
+  } else {
+    msg.style.display = "block";
+    msg.innerText = "Something went wrong. Try again.";
+  }
+});
 </script>
 </body>
 </html>
