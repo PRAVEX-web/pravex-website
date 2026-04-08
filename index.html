@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pravex - Websites, Graphics & Digital Design for Growing Businesses</title>
-<meta name="description" content="We create modern websites, graphic designs and digital assets that help businesses grow online. Build your brand with Pravex.">
+  <meta name="description" content="We create modern websites, graphic designs and digital assets that help businesses grow online. Build your brand with Pravex.">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css?v=2">
 </head>
@@ -230,10 +230,10 @@
       <div class="footer-links">
         <h4>Quick Links</h4>
         <ul>
-          <li>Home</li>
-          <li>Services</li>
-          <li>Our Works</li>
-          <li>Packages</li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#work">Our Works</a></li>
+          <li><a href="#packages">Packages</a></li>
         </ul>
       </div>
 
@@ -337,6 +337,24 @@ form.addEventListener("submit", async function(e) {
     msg.innerText = "Something went wrong. Try again.";
   }
 });
+
+/*scroll*/
+const slider = document.querySelector(".work-slider");
+const track = document.querySelector(".work-track");
+
+if (window.innerWidth <= 768) {
+
+  slider.addEventListener("touchstart", () => {
+    track.style.animationPlayState = "paused";
+  });
+
+  slider.addEventListener("touchend", () => {
+    setTimeout(() => {
+      track.style.animationPlayState = "running";
+    }, 2000);
+  });
+
+}
 </script>
 </body>
 </html>
