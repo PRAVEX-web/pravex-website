@@ -39,7 +39,7 @@ function layout(){
 }
 function animate(){
     if(!paused && !dragging){
-        rotation += 0.09;
+        rotation += 0.16;
     }
     layout();
     requestAnimationFrame(animate);
