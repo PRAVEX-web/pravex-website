@@ -695,13 +695,12 @@ section {
 .testimonial-card{
     position:relative;
 
-    background:rgba(17,17,17,.88);
-    border:1px solid rgba(255,204,0,.35);
-    border-radius:14px;
-    box-shadow:
-        0 10px 30px rgba(0,0,0,.25);
+    background: rgba(17,17,17,.88);
+    border: 1px solid rgba(255,204,0,.35);
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.25);
 
-    padding:30px 25px 25px;
+    padding: 30px 25px 25px;
     min-height:250px;
 
     overflow:hidden;
@@ -710,7 +709,6 @@ section {
         box-shadow .3s ease,
         border-color .3s ease;
 }
-
 /* HOVER */
 .testimonial-card:hover{
     transform:translateY(-8px);
@@ -735,7 +733,6 @@ section {
     opacity:.08;
     pointer-events:none;
 }
-
 /* STARS */
 .stars{
     color:#ffcc00;
@@ -745,11 +742,9 @@ section {
     margin-top:10px;
     margin-bottom:15px;
 }
-
 /* REVIEW */
 .testimonial-text{
     position:relative;
-
     color:#ffffff;
 
     font-size:14px;
@@ -767,7 +762,6 @@ section {
     gap:12px;
     margin-top:auto;
 }
-
 /* AVATAR */
 .client-avatar{
     width:42px;
@@ -941,7 +935,6 @@ section {
 
   border: 1px solid #34383b;
   border-radius: 4px;
-
   outline: none;
 
   /* SUBTLE 3D INSET EFFECT */
@@ -961,7 +954,6 @@ textarea {
   width: 65%;
   padding: 9px 14px;
   margin-bottom: 10px;
-
   min-height: 65px;
   resize: vertical;
 
@@ -970,7 +962,6 @@ textarea {
 
   border: 1px solid #34383b;
   border-radius: 4px;
-
   outline: none;
 
   /* SAME 3D DEPTH AS INPUTS */
@@ -994,7 +985,6 @@ textarea {
 /* ================= PRESSED → RAISED ================= */
 .footer-contact input:focus,
 .footer-contact textarea:focus {
-
   border-color: #3d4144;
   /* POPS OUTWARD */
   box-shadow:
@@ -1061,7 +1051,6 @@ textarea {
     inset: 0;
     width: 100vw;
     height: 100vh;
-
     pointer-events: none;
     z-index: 99999999999999;
 }
@@ -1072,9 +1061,7 @@ textarea {
     a,
     button,
     input,
-    textarea {
-        cursor: none;
-    }
+    textarea {cursor: none;}
 }
 
 /* For Mobile */
