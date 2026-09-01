@@ -76,13 +76,16 @@
         ctx.clearRect(0, 0, width, height);
 
         /* -----------------------------------------
-           SMOOTH CURSOR MOVEMENT
+        CURSOR + TRAIL MOVEMENT
         ----------------------------------------- */
-        const oldX = currentX;
-        const oldY = currentY;
 
-        currentX += (mouseX - currentX) * 0.45;
-        currentY += (mouseY - currentY) * 0.45;
+        /* Keep the actual cursor exactly on the mouse */
+        currentX = mouseX;
+        currentY = mouseY;
+
+        /* Keep the trail smooth */
+        const oldX = previousX;
+        const oldY = previousY;
 
         const dx = currentX - oldX;
         const dy = currentY - oldY;
@@ -117,64 +120,108 @@
         if (trail.length > MAX_TRAIL) {
             trail.length = MAX_TRAIL;
         }
+        previousX = currentX;
+        previousY = currentY;
 
         /* -----------------------------------------
-           SMOOTH FADING TRAIL
+        SMOOTH FADING RAINBOW TRAIL
         ----------------------------------------- */
+
         if (trail.length > 2) {
-            /* Draw from the oldest point toward
-               the cursor using smooth quadratic
-               curves */
+
             for (let i = trail.length - 2; i >= 0; i--) {
+
                 const current = trail[i];
                 const next = trail[i + 1];
+
                 const age = i / trail.length;
 
                 /*
-                 * Strong near cursor.
-                 * Very soft at the back.
+                 * Fade exactly like the current trail.
                  */
-                const fade = Math.pow(1 - age, 0.8) * current.life;
+                const fade =
+                    Math.pow(1 - age, 0.8) *
+                    current.life;
 
-                /* Midpoint makes the path smooth */
-                const midX = (current.x + next.x) / 2;
-                const midY = (current.y + next.y) / 2;
+
+                /* RAINBOW POSITION
+                   Colors flow along the trail.
+                   Change 0.035 if you want the
+                   rainbow to move faster/slower. */
+                const hue =
+                    (performance.now() * 0.40 + i * 9) % 360;
+
+                /* Midpoint keeps the trail smooth. */
+                const midX =
+                    (current.x + next.x) / 2;
+
+                const midY =
+                    (current.y + next.y) / 2;
 
                 /* =================================
                    OUTER GLOW
                 ================================= */
                 ctx.beginPath();
 
-                ctx.moveTo(current.x, current.y);
+                ctx.moveTo(
+                    current.x,
+                    current.y
+                );
 
-                ctx.quadraticCurveTo(current.x, current.y, midX, midY);
+                ctx.quadraticCurveTo(
+                    current.x,
+                    current.y,
+                    midX,
+                    midY
+                );
 
                 ctx.lineCap = "round";
                 ctx.lineJoin = "round";
 
-                ctx.strokeStyle = `rgba(147, 112, 219, ${fade * 0.24})`;
+                ctx.strokeStyle =
+                    `hsla(${hue}, 100%, 60%, ${fade * 0.24})`;
 
-                ctx.lineWidth = 7 * (1 - age * 0.65);
+                ctx.lineWidth =
+                    7 * (1 - age * 0.65);
 
                 ctx.shadowBlur = 10;
-                ctx.shadowColor = `rgba(0, 128, 0, ${fade * 0.75})`;
+
+                ctx.shadowColor =
+                    `hsla(${hue}, 100%, 60%, ${fade * 0.75})`;
 
                 ctx.stroke();
+
 
                 /* =================================
                    INNER LIGHT
                 ================================= */
+
                 ctx.beginPath();
 
-                ctx.moveTo(current.x, current.y);
-                ctx.quadraticCurveTo(current.x, current.y, midX, midY);
+                ctx.moveTo(
+                    current.x,
+                    current.y
+                );
+
+                ctx.quadraticCurveTo(
+                    current.x,
+                    current.y,
+                    midX,
+                    midY
+                );
 
                 ctx.lineCap = "round";
-                ctx.strokeStyle = `rgba(0, 0, 255, ${fade * 0.70})`;
-                ctx.lineWidth = 2 * (1 - age * 0.5);
+
+                ctx.strokeStyle =
+                    `hsla(${hue}, 100%, 70%, ${fade * 0.70})`;
+
+                ctx.lineWidth =
+                    2 * (1 - age * 0.5);
 
                 ctx.shadowBlur = 4;
-                ctx.shadowColor = `rgba(255, 192, 203, ${fade})`;
+
+                ctx.shadowColor =
+                    `hsla(${hue}, 100%, 70%, ${fade})`;
 
                 ctx.stroke();
             }
@@ -185,7 +232,7 @@
         ----------------------------------------- */
         for (let i = trail.length - 1; i >= 0; i--) {
 
-            trail[i].life -= 0.035;
+            trail[i].life -= 0.030;
 
             if (trail[i].life <= 0) {
                 trail.splice(i, 1);
