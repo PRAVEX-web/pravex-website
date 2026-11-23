@@ -8,21 +8,33 @@
   <meta name="description" content="We create modern websites, graphic designs 
   and digital assets that help businesses grow online. Build your brand with Pravex.">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=9">
+  <link rel="stylesheet" href="style.css?v=10">
 </head>
   
 <body>
+
 <!-- HERO WRAPPER -->
 <div class="hero-wrapper">
+
   <!-- NAVBAR -->
   <div class="navbar">
-    <div class="nav-links">
+
+    <!-- MOBILE MENU BUTTON -->
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- NAVIGATION -->
+    <div class="nav-links" id="navLinks">
       <a href="#home">HOME</a>
       <a href="#services">SERVICES</a>
       <a href="#work">OUR WORK</a>
       <a href="#testimonials">TESTIMONIALS</a>
       <a href="#contact">CONTACT</a>
     </div>
+
   </div>
 
   <!-- ================= HERO ================= -->
@@ -48,14 +60,19 @@
   <!-- ================= SERVICES ================= -->
   <section id="services" class="services-section">
     <div class="container">
+
       <div class="services-container">
+
         <div class="services-right">
           <img src="ALL_IMGs/Pravex CEO 2.png" alt="">
         </div>
+
         <div class="services-text">
+
           <div class="services-left">
             <h2>Everything your<br>business needs</h2>
           </div>
+
           <div class="services-middle">
             <ul>
               <li>Branding</li>
@@ -64,19 +81,25 @@
               <li>Website Setup</li>
             </ul>
           </div>
+
         </div>
+
       </div>
+
     </div>
   </section>
 
   <!-- ================= CTA STRIP ================= -->
   <section class="cta-strip">
     <div class="container">
+
       <div class="cta-left">
         <p>If your business looks average, customers ignore you.</p>
         <h3>Let's fix that</h3>
       </div>
+
       <div class="cta-right">
+
         <a href="https://wa.me/919082508278?text=Hi%20I%20want%20to%20know%20more%20about%20your%20services" 
         class="cta-btn">
           Call or WhatsApp to Get Started
@@ -86,8 +109,9 @@
           <img src="ALL_IMGs/Phone icon.png" class="call-icon">
           <span>+91 9082 5082 78</span>
         </div>
-        
+
       </div>
+
     </div>
   </section>
 
@@ -236,27 +260,27 @@
       <div class="brands-logos">
 
           <div class="brand-logo">
-              <img src="ALL_IMGs/Our Works/Logos/Orgorise.jpg" alt="Orgorise">
+              <img src="ALL_IMGs/Our Works/Logos/orgorise_logo_transparent.png" alt="Orgorise">
           </div>
 
           <div class="brand-logo">
-              <img src="ALL_IMGs/Our Works/Logos/Orgorise.jpg" alt="Orgorise">
+              <img src="ALL_IMGs/Our Works/Logos/Martial Arts 2.png" alt="Martial Arts 2">
           </div>
 
           <div class="brand-logo">
-              <img src="ALL_IMGs/Our Works/Logos/Orgorise.jpg" alt="Orgorise">
+              <img src="ALL_IMGs/Our Works/Logos/Sai Shraddha Logo ff 1.png" alt="SS">
           </div>
 
           <div class="brand-logo">
-              <img src="ALL_IMGs/Our Works/Logos/Orgorise.jpg" alt="Orgorise">
+              <img src="ALL_IMGs/Our Works/Logos/sakshi_circular.png" alt="Sulkar">
           </div>
 
           <div class="brand-logo">
-              <img src="ALL_IMGs/Our Works/Logos/Orgorise.jpg" alt="Orgorise">
+              <img src="ALL_IMGs/Our Works/Logos/Minu Tai.png" alt="Evian">
           </div>
 
           <div class="brand-logo">
-              <img src="ALL_IMGs/Our Works/Logos/Orgorise.jpg" alt="Orgorise">
+              <img src="ALL_IMGs/Our Works/Logos/Patil Sea Food Logo.png" alt="PSF">
           </div>
 
       </div>
@@ -502,6 +526,32 @@ function revealOnScroll() {
 
 window.addEventListener("scroll", revealOnScroll);
 
+/* ================= MOBILE MENU ================= */
+const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+const navbar = document.querySelector(".navbar");
+const mobileNavLinks = document.querySelectorAll(".nav-links a");
+
+mobileMenuBtn.addEventListener("click", () => {
+    const isOpen = navbar.classList.toggle("menu-open");
+
+    mobileMenuBtn.classList.toggle("active", isOpen);
+    mobileMenuBtn.setAttribute(
+        "aria-label",
+        isOpen ? "Close menu" : "Open menu"
+    );
+});
+/* CLOSE MENU AFTER CLICKING A LINK */
+mobileNavLinks.forEach(link => {
+    link.addEventListener("click", () => {
+        navbar.classList.remove("menu-open");
+        
+        mobileMenuBtn.classList.remove("active");
+        mobileMenuBtn.setAttribute(
+            "aria-label",
+            "Open menu"
+        );
+    });
+});
 /* NAVLINKS */
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll(".nav-links a");
